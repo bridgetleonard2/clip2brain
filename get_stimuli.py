@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 
-subj = 1
+subj = 5
 project_output_dir = 'output'
 
 # stimuli_dir is from config
@@ -13,7 +13,10 @@ all_images_paths = ["%s/%s.jpg" % (stimuli_dir, id) for id in all_coco_ids]
 print("Number of Images: {}".format(len(all_images_paths)))
 
 # check brain data shape
-br_data = np.load('output/cortical_voxels/averaged_cortical_responses_zscored_by_run_subj%02d.npy' % subj)
+br_data = np.load(
+    'output/cortical_voxels/'
+    'averaged_cortical_responses_zscored_by_run_subj%02d.npy' % subj
+    )
 print("Brain data shape:", br_data.shape)
 
 # generate an image array
